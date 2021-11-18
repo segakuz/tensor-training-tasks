@@ -1,13 +1,15 @@
 '''Склеить путь из папки и файла'''
 
-
-from os.path import join
-from os_get_cwd import get_current_dir
+import os
+import re
+from os.path import join, normpath
 
 
 def get_full_path(head, trail):
-    return join(head, trail)
+    normalized_head = f'{os.sep}'.join(re.split(r'[/\\]+', head))
+
+    return normpath(join(normalized_head, trail))
 
 
 if __name__ == "__main__":
-    print(get_full_path(get_current_dir(), 'testfile.txt'))
+    print(get_full_path('\\different/slashes', 'testfile.txt'))
