@@ -9,7 +9,7 @@ from datetime import datetime
 import calendar
 
 
-def change_month(date_str, months):
+def change_month(date_str, months, output_format='%d.%m.%y'):
     dt = datetime.strptime(date_str, '%d.%m.%y')
 
     m = (dt.month + months) % 12
@@ -18,10 +18,10 @@ def change_month(date_str, months):
     y = dt.year + (dt.month + months - 1) // 12
     d = min(dt.day, calendar.monthrange(y, m)[1])
 
-    return dt.replace(day=d, month=m, year=y).strftime('%d.%m.%y')
+    return dt.replace(day=d, month=m, year=y).strftime(output_format)
 
 
-print(change_month('12.12.12', 7))
-print(change_month('12.12.12', 12))
-print(change_month('01.11.10', -5))
-print(change_month('01.11.10', -11))
+# print(change_month('12.12.12', 7))
+# print(change_month('12.12.12', 12))
+# print(change_month('01.11.10', -5))
+# print(change_month('01.11.10', -11))

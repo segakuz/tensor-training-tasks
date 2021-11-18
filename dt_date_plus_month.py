@@ -1,11 +1,6 @@
 """"Прибавить к любой дате 1 месяц и вывести в формате ДД.ММ.ГГГГ"""
 
 
-from datetime import date
+from training_tasks.dt_change_month import change_month
 
-
-def get_date_plus_month(date_obj):
-    return date(date_obj.year + int(date_obj.month / 12), ((date_obj.month % 12) + 1), date_obj.day)
-
-
-print(get_date_plus_month(date(2021, 12, 5)))
+print(change_month('11.12.87', 1, '%d.%m.%Y'))
