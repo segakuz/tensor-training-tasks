@@ -21,7 +21,8 @@ def change_month(date_str, months, output_format='%d.%m.%y'):
     return dt.replace(day=d, month=m, year=y).strftime(output_format)
 
 
-# print(change_month('12.12.12', 7))
-# print(change_month('12.12.12', 12))
-# print(change_month('01.11.10', -5))
-# print(change_month('01.11.10', -11))
+if __name__ == "__main__":
+    print(change_month('12.12.12', 7))
+    print(change_month('12.12.12', 12))
+    print(change_month('01.11.10', -5))
+    print(change_month('01.11.10', -11))

@@ -3,4 +3,6 @@
 
 from training_tasks.dt_change_month import change_month
 
-print(change_month('11.12.87', 1, '%d.%m.%Y'))
+
+if __name__ == "__main__":
+    print(change_month('11.12.87', 1, '%d.%m.%Y'))
